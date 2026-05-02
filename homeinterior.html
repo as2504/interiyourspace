@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;800&amp;family=Manrope:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#d3c5ac",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed-variant": "#753400",
+                        "primary-fixed": "#ffdbc9",
+                        "secondary": "#4656b4",
+                        "outline-variant": "#e0c0b0",
+                        "inverse-on-surface": "#f1f1f1",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#ffb68c",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "on-background": "#1b1b1b",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#a69982",
+                        "background": "#f9f9f9",
+                        "secondary-fixed": "#dee0ff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#221b0b",
+                        "inverse-primary": "#ffb68c",
+                        "on-primary-container": "#562400",
+                        "surface-dim": "#dadada",
+                        "primary": "#9a4600",
+                        "on-primary-fixed": "#321200",
+                        "surface-tint": "#9a4600",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#3a3120",
+                        "surface": "#f9f9f9",
+                        "primary-container": "#f77501",
+                        "secondary-container": "#8c9cff",
+                        "on-surface-variant": "#584236",
+                        "on-secondary": "#ffffff",
+                        "outline": "#8c7263",
+                        "on-secondary-fixed": "#000f5c",
+                        "on-tertiary-fixed-variant": "#4f4633",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1b1b1b",
+                        "tertiary": "#685d49",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#2c3d9b",
+                        "on-secondary-container": "#1c2e8d",
+                        "inverse-surface": "#303030",
+                        "tertiary-fixed": "#f0e1c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "128px",
+                        "stack-sm": "8px",
+                        "margin-edge": "64px",
+                        "container-max": "1440px",
+                        "stack-lg": "48px",
+                        "gutter": "32px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "body-lg": ["Manrope"],
+                        "display-xl": ["Epilogue"],
+                        "label-caps": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-xl": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "300"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Fix horizontal overflow */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        /* Mobile Nav Transitions */
+        #mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
+    <!-- TopNavBar -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 flex justify-between items-center px-6 md:px-16 py-6 md:py-8">
+        <div class="text-xl font-bold tracking-tighter text-gray-900 uppercase font-headline-md">
+            <a href="index.html">interiyourspace</a>
+        </div>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-12">
+            <a class="font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold text-gray-600 hover:text-orange-600 transition-all duration-300" href="about.html">About</a>
+            <a class="font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold text-[#F77501] border-b-2 border-[#F77501] pb-1 transition-all duration-300" href="homeinterior.html">Home Interior</a>
+            <a class="font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold text-gray-600 hover:text-orange-600 transition-all duration-300" href="officeinterior.html">Office Interior</a>
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center gap-6">
+            <button class="hidden md:block bg-[#F77501] text-white px-8 py-2 font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold hover:opacity-70 transition-all duration-300 active:scale-95">
+                Contact
+            </button>
+            
+            <!-- Hamburger Icon -->
+            <button id="menu-toggle" class="md:hidden text-gray-900 p-2">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black/95 flex flex-col items-center justify-center gap-8 md:hidden">
+        <button id="menu-close" class="absolute top-8 right-8 text-white">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a class="text-white text-2xl font-headline-md uppercase tracking-widest" href="about.html">About</a>
+        <a class="text-white text-2xl font-headline-md uppercase tracking-widest" href="homeinterior.html">Home Interior</a>
+        <a class="text-white text-2xl font-headline-md uppercase tracking-widest" href="officeinterior.html">Office Interior</a>
+        <a class="bg-[#F77501] text-white px-12 py-4 font-headline-md uppercase tracking-widest mt-4" href="mailto:interiyourspace@gmail.com">Contact</a>
+    </div>
+
+<!-- Hero Section -->
+<header class="relative w-full h-[70vh] md:h-[90vh] overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<img alt="Luxury Living Room" class="w-full h-full object-cover" src="assets/space-bcg-01.jpg"/>
+<div class="absolute inset-0 bg-black/30 md:bg-black/20"></div>
+</div>
+<div class="relative z-10 px-6 md:px-16 max-w-[1440px] mx-auto w-full">
+<div class="max-w-3xl bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-8 md:p-0 border border-white/10 md:border-none">
+<span class="inline-block font-label-caps text-white mb-4 md:mb-6 tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-sm">RESIDENTIAL SHOWCASE</span>
+<h1 class="font-display-xl text-white mb-6 md:mb-8 text-4xl md:text-display-xl leading-tight">The Serene Residence</h1>
+<p class="font-body-lg text-white/90 max-w-xl text-sm md:text-body-lg">A masterclass in quiet luxury, balancing architectural precision with the soft warmth of a curated home sanctuary.</p>
+</div>
+</div>
+<div class="absolute bottom-12 right-12 z-10 hidden md:block">
+<div class="flex items-center gap-4 text-white font-label-caps">
+<span>SCROLL TO EXPLORE</span>
+<div class="w-12 h-[1px] bg-white"></div>
+</div>
+</div>
+</header>
+<!-- Project Overview -->
+<section class="py-section-gap px-16 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-5 mb-stack-lg">
+<h2 class="font-headline-lg text-on-surface mb-stack-md">Philosophy of Light and Space</h2>
+<div class="w-24 h-1 bg-primary-container mb-stack-md"></div>
+<p class="font-body-lg text-on-surface-variant italic">"Design is not just what it looks like; it's how it makes you feel."</p>
+</div>
+<div class="col-span-12 md:col-start-7 md:col-span-6">
+<p class="font-body-lg text-on-surface-variant mb-stack-md leading-relaxed">
+                    The Serene Residence project was born from a desire to create a sanctuary that breathes. Located in the heart of the city, this penthouse required a complete spatial reimagining to optimize the flow of natural light and capitalize on panoramic views.
+                </p>
+<p class="font-body-lg text-on-surface-variant mb-stack-lg leading-relaxed">
+                    By applying the interiyourspace design philosophy, we focused on the intersection of materiality and illumination. Every surface, from the hand-applied plaster walls to the custom white-oak cabinetry, was selected for its ability to catch and diffuse light throughout the day.
+                </p>
+<div class="grid grid-cols-2 gap-stack-md pt-stack-md border-t border-outline-variant">
+<div>
+<span class="block font-label-caps text-primary mb-2">LOCATION</span>
+<span class="font-headline-md text-sm uppercase tracking-wider">Metropolitan Heights</span>
+</div>
+<div>
+<span class="block font-label-caps text-primary mb-2">SCOPE</span>
+<span class="font-headline-md text-sm uppercase tracking-wider">Full Interior Renovation</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Highlights (Bento Grid) -->
+<section class="py-section-gap bg-surface-container-low px-16">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-stack-lg text-center">
+<h2 class="font-headline-lg text-on-surface">Curation &amp; Detail</h2>
+<p class="font-label-caps text-primary mt-2">THE ARCHITECTURAL ELEMENTS</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-[800px]">
+<!-- High-Impact Vertical -->
+<div class="md:row-span-2 group relative overflow-hidden bg-white shadow-[0px_20px_40px_rgba(44,61,155,0.05)]">
+<img alt="Detail Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro detail shot of artisanal textures within a luxury interior. Hand-woven textiles with organic patterns rest beside a smooth, honed limestone surface. The lighting is diffused and natural, highlighting the tactile quality of the materials. The color palette is neutral, featuring ivory, sand, and charcoal tones, creating a calm and expensive mood." src="https://lh3.googleusercontent.com/aida/ADBb0ui57N8vWiT3Fe7Dndore6MqP4sQiNThyLdv7j4DvXGvQDY2AdaSJLavKqrtq8601ZN9NrFcMtnJiSPi_0VbYsEb1X9C2ACPwl68Pqe0npOgt976uxGzB7Yt9tAjbRYVzSDfeGVK3FfAyEdQ3c4h5nWJpYN7Ki63puTTt2l5j8_sfNrjtQXVdEnKgEiZqCwMVViVYvayw-yZYwu8-GjKRme2LRHOQQK1C3IP1UheQxiL3tARM8nnzOhNo201LKSB6_10GsKmvNp-Ig"/>
+<div class="absolute bottom-0 left-0 right-0 p-stack-md bg-gradient-to-t from-black/60 to-transparent text-white">
+<span class="font-label-caps text-xs mb-1 block">ELEMENT 01</span>
+<h3 class="font-headline-md text-xl">Artisanal Textures</h3>
+</div>
+</div>
+<!-- Central Top -->
+<div class="md:col-span-2 group relative overflow-hidden bg-white shadow-[0px_20px_40px_rgba(44,61,155,0.05)]">
+<img alt="Natural Light" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide architectural shot showing a minimalist hallway where natural light creates dramatic geometric shadows on the floor and walls. The space is uncluttered, featuring a single piece of abstract sculpture. The overall atmosphere is serene and gallery-like, with a high-key light mode aesthetic dominated by soft whites and subtle grey gradients." src="https://lh3.googleusercontent.com/aida/ADBb0uj5oikCxV_O1r-OzfNWcR8tJbnR60eG2NOOasjNsjdCr8BhHIg5M2zKcMPbhdBqoQI0s4lGhNN-yL6QP0iu57-Sn3txhy8h5n4YC91ndfN73zaRBWuLwUOSW8BV7CjjNnUPCPqpItMMaxSPZyGmJU-YsQAsAb763nUkMlNkwANocqx0UaDV-yvRDs7_M_qfuBVhEeXyKXx76nV3koPLZ9Hlr14l5x8nHjpme8qgHGp0QCj3OumvE68aqg1CpZ0l2N2cPVkv_Hh4"/>
+<div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<div class="text-center p-stack-md">
+<h3 class="font-headline-md text-white">Natural Light Optimization</h3>
+<p class="text-white/80 font-body-md mt-2">Strategically placed mirrors and translucent partitions.</p>
+</div>
+</div>
+</div>
+<!-- Bottom Middle -->
+<div class="group relative overflow-hidden bg-white shadow-[0px_20px_40px_rgba(44,61,155,0.05)]">
+<div class="p-stack-lg flex flex-col justify-center h-full">
+<span class="material-symbols-outlined text-primary text-5xl mb-stack-md" data-icon="architecture">architecture</span>
+<h3 class="font-headline-md text-2xl mb-stack-sm">Bespoke Furniture</h3>
+<p class="font-body-md text-on-surface-variant">Every piece in the living area was custom-designed to fit the unique dimensions of the residence.</p>
+</div>
+</div>
+<!-- Bottom Right -->
+<div class="group relative overflow-hidden bg-white shadow-[0px_20px_40px_rgba(44,61,155,0.05)]">
+<img alt="Detail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up view of a luxury kitchen island featuring rare Calacatta marble with deep orange and grey veining. The cabinetry is dark, matte-finished wood, providing a stark but warm contrast. Soft under-cabinet lighting illuminates the surface, creating an inviting and high-end culinary environment. The aesthetic is architectural and precise." src="https://lh3.googleusercontent.com/aida/ADBb0ujU_aczX7RnXEicz3YdBqUd8KeM_aBKpV5RX_1DUw4JmWsKsP4dtosm-f3ME1MyV7i-OqzNEH8tr8ARU2wKUuvepQcdM9SZF7yNx7rYBZ_K9vra1KN0Ie71V8CXu9RidS0jh6kkPUJ25p2I_YPq86Y_5FOOJFuShOvfsgpBEhjzAxQqsO1eMJHxEtOjon-tzQR6iYPzpTdRl2AbHFEif9qG3ESiPTh6QNvEqAIlXQiLVCPbfg0b1LMWNaqMKvV0vBK9DjPhQIq3"/>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary-container text-white px-4 py-1 font-label-caps">CRAFTED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Image Carousel (Horizontal Scroll) -->
+<section class="py-section-gap overflow-hidden">
+<div class="px-16 max-w-[1440px] mx-auto mb-stack-lg flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg">Gallery of Spaces</h2>
+<p class="font-body-lg text-on-surface-variant mt-2">A visual journey through the private and social zones.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto hide-scrollbar px-16 pb-stack-lg">
+<div class="min-w-[80vw] md:min-w-[50vw] aspect-[1.5] relative overflow-hidden">
+<img alt="Dining Room" class="w-full h-full object-cover" data-alt="An elegant dining room setting within a luxury residence. A long, dark oak table is surrounded by minimalist velvet chairs in a deep navy hue. A contemporary chandelier with glowing glass orbs hangs above, casting a soft, warm light over a curated tablescape. Large windows in the background reveal a twilight city view. The mood is sophisticated and intimate." src="https://lh3.googleusercontent.com/aida/ADBb0uixFi4dC8rA1P4NXgFlgCLwil_dt3EMuDevrd-6J73CA_HWGF3TcgndC-DqikUGoNNYk6tJ0g9WEFJbrYEZgAtUZlFrFUEoAG3yQ1CPnEGGv6bSYB-0qS9vmGLhG8jMS71ZYBGsBB6BxCnYc96GSzNpCqo7Vmc1625hHWLbiSclo4QjLdcoKPiykSTn2BPX3oszrlGI-MGzbBP_-RXDw0Sygl7YCdOTFDaZyf2-_lkcRxPpjzLR1B5Dfzs291JQARdmTpAllhMkOg"/>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-label-caps opacity-70">SOCIAL SPACE</p>
+<h4 class="font-headline-md">The Formal Dining Room</h4>
+</div>
+</div>
+<div class="min-w-[80vw] md:min-w-[50vw] aspect-[1.5] relative overflow-hidden">
+<img alt="Master Suite" class="w-full h-full object-cover" data-alt="A serene master bedroom suite designed with a minimalist aesthetic. The bed features high-thread-count white linens and a custom upholstered headboard in a soft taupe. Floor-to-ceiling sheer curtains diffuse the bright daylight, creating a peaceful and airy atmosphere. The color palette is composed of soft beiges, whites, and subtle wood tones, embodying a high-end retreat." src="https://lh3.googleusercontent.com/aida/ADBb0uheyOYBo_OCxnb-OGeWnBYQy9xfmqQW8h0oC-TTzn5FVDpFOpLrY0vuIDBtpKshJvVKYLmLycdqyNqgwL4puWY4G14K0o0ZKMJ72EOD3XN6F3CKi_LOVZ-dS4zjo0Bt4ii7QAoiS-c4KKN3U7kGfx4sEBKxEpgDCE2NCmQvnAjszpcIlhBhYWWr9CPi5YrwgbV_bRxE3IIJez_wNEjjZyLKsufB7hRtpwg94WJgGcSNr07wG1hJqenuq3-n1dORDxJq814hp9ay0Q"/>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-label-caps opacity-70">PRIVATE SUITE</p>
+<h4 class="font-headline-md">The Principal Bedroom</h4>
+</div>
+</div>
+<div class="min-w-[80vw] md:min-w-[50vw] aspect-[1.5] relative overflow-hidden">
+<img alt="Home Office" class="w-full h-full object-cover" data-alt="A modern and sleek home office space. A minimalist floating desk in walnut wood is paired with an ergonomic designer chair. The walls are finished in a dark, sophisticated navy blue, contrasted by bright, high-key lighting from a large window. The space is accessorized with architectural books and a single green plant, creating a focused and luxurious workspace." src="https://lh3.googleusercontent.com/aida/ADBb0ugdJkp68x7_r5lz12Bo9vfbbcL_hiMz5LpS6zHHYNPgkWGjpb18ONhPVFQ0PFzqtyGikwWH84p31NDZaW5Ykm2N4T8mc6fuimA5dbYSLI-Ilmb3gaWCavGFvqMVEjtIuRHrZLe7OxDUlR0Nl567xgtOk1542dDH9ik3K8GPC-uCeeW-AlR5PuTAujqT3TVwiyeBpNoebHq8sDV8V1dhDexZChkdBXEiEhJ_VL3HzTwsxRNV56SIQfutNblQkBffk2_D_vJoRuIdTA"/>
+<div class="absolute bottom-8 left-8 text-white">
+<p class="font-label-caps opacity-70">CREATIVE ZONE</p>
+<h4 class="font-headline-md">The Executive Library</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="py-section-gap bg-tertiary-fixed text-on-tertiary-fixed text-center px-16">
+<div class="max-w-4xl mx-auto">
+<span class="material-symbols-outlined text-6xl text-primary mb-stack-md" data-icon="format_quote" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="font-headline-lg mb-stack-lg leading-snug">"The team at interiyourspace didn't just design a house; they curated an experience. Every morning when the light hits the living room, I'm reminded of why we chose them."</p>
+<div class="flex flex-col items-center">
+<div class="w-16 h-[2px] bg-primary mb-stack-sm"></div>
+<h5 class="font-label-caps text-base">ELARA VANCE</h5>
+<p class="font-body-md opacity-70 italic uppercase tracking-widest">Homeowner, The Serene Residence</p>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-section-gap px-16 text-center max-w-[1440px] mx-auto">
+<div class="bg-surface-container-high p-24 relative overflow-hidden group">
+<div class="relative z-10">
+<h2 class="font-display-xl mb-stack-md text-on-surface">Ready to define your space?</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg">We are currently accepting a limited number of high-end residential projects for the upcoming season. Let's discuss your vision.</p>
+<button class="bg-primary-container text-white px-12 py-5 font-label-caps text-sm tracking-[0.2em] uppercase hover:opacity-90 transition-all duration-300 shadow-xl active:scale-95">
+                    Start Your Project
+                </button>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -top-24 -right-24 w-64 h-64 border border-outline-variant rounded-full opacity-20 group-hover:scale-110 transition-transform duration-1000"></div>
+<div class="absolute -bottom-12 -left-12 w-48 h-48 border border-outline-variant rounded-full opacity-20 group-hover:scale-110 transition-transform duration-1000"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-16 px-6 md:px-margin-edge border-t border-gray-200">
+    <div class="max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+            <!-- Branding & Socials -->
+            <div class="space-y-6">
+                <div class="text-xl font-bold text-gray-900 uppercase font-headline-md">
+                    <a href="index.html">interiyourspace</a>
+                </div>
+                <div class="flex gap-6">
+                    <a class="text-gray-400 hover:text-[#F77501] transition-all" href="https://www.instagram.com/interiyour_space?igsh=MWRveGs0a242ejE2aQ==&utm_source=ig_contact_invite" target="_blank"><span class="material-symbols-outlined text-xl">camera</span></a>
+                    <a class="text-gray-400 hover:text-[#F77501] transition-all" href="https://wa.me/919834757467" target="_blank"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+                    <a class="text-gray-400 hover:text-[#F77501] transition-all" href="mailto:interiyourspace@gmail.com"><span class="material-symbols-outlined text-xl">alternate_email</span></a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-4">
+                <h5 class="font-label-caps text-xs text-gray-900 uppercase">Contact</h5>
+                <div class="space-y-2 text-sm text-gray-600">
+                    <p>SANIKA - 9834757467</p>
+                    <p>PRIYAM - 94796 58996</p>
+                    <a href="mailto:interiyourspace@gmail.com" class="hover:text-primary transition-colors">interiyourspace@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="space-y-4">
+                <h5 class="font-label-caps text-xs text-gray-900 uppercase">Location</h5>
+                <p class="text-sm text-gray-600">Pune City</p>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-200/50 flex justify-center items-center">
+            <div class="font-epilogue text-[10px] uppercase tracking-widest text-gray-400">
+                © 2024 INTERIYOURSPACE. CRAFTING MODERN LUXURY.
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body></html>

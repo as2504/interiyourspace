@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Office Interior | interiyourspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#584236",
+                        "on-secondary-container": "#1c2e8d",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary": "#685d49",
+                        "inverse-surface": "#303030",
+                        "primary": "#9a4600",
+                        "on-tertiary-fixed-variant": "#4f4633",
+                        "surface-dim": "#dadada",
+                        "surface-container-low": "#f3f3f3",
+                        "outline-variant": "#e0c0b0",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eeeeee",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "outline": "#8c7263",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#9a4600",
+                        "primary-fixed-dim": "#ffb68c",
+                        "on-tertiary-container": "#3a3120",
+                        "on-background": "#1b1b1b",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#bbc3ff",
+                        "secondary": "#4656b4",
+                        "on-surface": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#2c3d9b",
+                        "on-tertiary-fixed": "#221b0b",
+                        "inverse-on-surface": "#f1f1f1",
+                        "primary-container": "#f77501",
+                        "on-secondary-fixed": "#000f5c",
+                        "tertiary-fixed": "#f0e1c7",
+                        "tertiary-fixed-dim": "#d3c5ac",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#a69982",
+                        "primary-fixed": "#ffdbc9",
+                        "background": "#f9f9f9",
+                        "secondary-container": "#8c9cff",
+                        "inverse-primary": "#ffb68c",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary-fixed-variant": "#753400",
+                        "on-primary-container": "#562400",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-fixed": "#dee0ff",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed": "#321200"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-edge": "64px",
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "gutter": "32px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "section-gap": "128px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Epilogue"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Epilogue"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "headline-md": ["Epilogue"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "300"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-bloom {
+            box-shadow: 0px 20px 40px rgba(44, 61, 155, 0.05);
+        }
+        .reveal-on-hover .caption {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+        .reveal-on-hover:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-on-hover img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-on-hover:hover img {
+            transform: scale(1.05);
+        }
+        .underline-input {
+            border: none;
+            border-bottom: 1px solid #8c7263;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .underline-input:focus {
+            outline: none;
+            border-bottom: 2px solid #9a4600;
+            ring: 0;
+        }
+        /* Fix horizontal overflow */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+        /* Mobile Nav Transitions */
+        #mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 flex justify-between items-center px-6 md:px-16 py-6 md:py-8">
+        <div class="text-xl font-bold tracking-tighter text-gray-900 uppercase font-headline-md">
+            <a href="index.html">interiyourspace</a>
+        </div>
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex gap-12">
+            <a class="font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold text-gray-600 hover:text-orange-600 transition-all duration-300" href="about.html">About</a>
+            <a class="font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold text-gray-600 hover:text-orange-600 transition-all duration-300" href="homeinterior.html">Home Interior</a>
+            <a class="font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold text-[#F77501] border-b-2 border-[#F77501] pb-1 transition-all duration-300" href="officeinterior.html">Office Interior</a>
+        </nav>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center gap-6">
+            <button class="hidden md:block bg-[#F77501] text-white px-8 py-2 font-epilogue uppercase tracking-[0.2em] text-[11px] font-semibold hover:opacity-70 transition-all duration-300 active:scale-95">
+                Contact
+            </button>
+            
+            <!-- Hamburger Icon -->
+            <button id="menu-toggle" class="md:hidden text-gray-900 p-2">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-black/95 flex flex-col items-center justify-center gap-8 md:hidden">
+        <button id="menu-close" class="absolute top-8 right-8 text-white">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a class="text-white text-2xl font-headline-md uppercase tracking-widest" href="about.html">About</a>
+        <a class="text-white text-2xl font-headline-md uppercase tracking-widest" href="homeinterior.html">Home Interior</a>
+        <a class="text-white text-2xl font-headline-md uppercase tracking-widest" href="officeinterior.html">Office Interior</a>
+        <a class="bg-[#F77501] text-white px-12 py-4 font-headline-md uppercase tracking-widest mt-4" href="mailto:interiyourspace@gmail.com">Contact</a>
+    </div>
+
+<main>
+<!-- Section 1: Hero Section -->
+<section class="relative h-[70vh] md:h-[90vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Modern Office" class="w-full h-full object-cover" src="assets/space-office-01.jpg"/>
+<div class="absolute inset-0 bg-black/40 md:bg-black/20"></div>
+</div>
+<div class="relative z-10 px-6 md:px-margin-edge w-full max-w-container-max mx-auto">
+<div class="max-w-3xl bg-black/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none p-8 md:p-0 border border-white/10 md:border-none">
+<p class="font-label-caps text-white mb-2 md:mb-stack-sm tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-sm">BEYOND ARCHITECTURE</p>
+<h1 class="font-display-xl text-4xl md:text-display-xl text-white mb-6 md:mb-stack-md leading-tight">Modern Office Workspaces</h1>
+<p class="font-body-lg text-sm md:text-body-lg text-white/90 mb-8 md:mb-stack-lg max-w-xl">Elevating Productivity through Design. We create bespoke environments that foster innovation and reflect your corporate identity.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary px-8 py-3 md:py-4 font-label-caps hover:opacity-90 transition-all text-xs md:text-sm">Explore Projects</button>
+<button class="border border-white text-white px-8 py-3 md:py-4 font-label-caps hover:bg-white hover:text-on-background transition-all text-xs md:text-sm">View Process</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Why Choose Us -->
+<section class="py-section-gap px-margin-edge max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 space-y-stack-md">
+<span class="font-label-caps text-primary tracking-widest">WHY INTERIYOURSPACE</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Precision in Every Square Foot</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our office interior services transcend basic aesthetics. We focus on the intersection of human performance and architectural integrity, ensuring every workspace we design is a strategic asset for your business.</p>
+<div class="pt-stack-md space-y-stack-lg">
+<div class="flex gap-stack-md">
+<div class="mt-1"><span class="material-symbols-outlined text-primary text-3xl">architecture</span></div>
+<div>
+<h3 class="font-headline-md text-headline-md text-lg mb-2">Strategic Spatial Planning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Optimizing floor plans for maximum efficiency, natural light distribution, and seamless departmental flow.</p>
+</div>
+</div>
+<div class="flex gap-stack-md">
+<div class="mt-1"><span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span></div>
+<div>
+<h3 class="font-headline-md text-headline-md text-lg mb-2">Bespoke Executive Environments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Crafting tailored suites that radiate authority while maintaining ergonomic comfort and brand prestige.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-6 lg:col-start-7 relative">
+<div class="aspect-[4/5] bg-tertiary-fixed overflow-hidden soft-bloom">
+<img alt="Office Planning" class="w-full h-full object-cover" data-alt="A detailed close-up of a high-end architectural workspace where professional designers are reviewing blueprints for a commercial office project. The setting is bright and clean with soft, neutral tones and warm orange highlights on design tools. Modern drafting equipment and high-resolution material samples are spread across a light oak table. The mood is focused and reflects meticulous precision and sophisticated luxury." src="https://lh3.googleusercontent.com/aida/ADBb0uhprr1u9uOtzBHJdj55OF6rtm6nf4iOVyPwl6GhYMtaBI6hF9qIu1cJc5e-wxXj_O50J7hP6LsJOhnGioaaJAHb-STYUNLZizNJsoBW_MH1mmVsAZrTRpkAwzcOIHd91ozXdpPjJwuW1RVm7Jq7KxmiX_96e0_A0DAv6fHuplFm5KjCRF97xUJfGdnlBgmcCrC4VH4mabmK_Eq6HAeyjesT05857yTRNayUz7saZujLXI8zQzEcJmaBx9bB97qmaCdGhekk-rmxrw"/>
+</div>
+<div class="absolute -bottom-12 -left-12 hidden lg:block w-64 h-64 bg-surface-container border border-outline-variant p-8 soft-bloom">
+<p class="font-display-xl text-5xl text-primary mb-2">15+</p>
+<p class="font-label-caps text-on-surface-variant">Years of Design Excellence</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Interior Design Process -->
+<section class="bg-stone-50 py-section-gap overflow-hidden">
+<div class="px-margin-edge max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-section-gap gap-stack-md">
+<div class="max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm uppercase tracking-tighter">Interior Design Process</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">From concept to completion, we transform your vision into reality with methodical precision.</p>
+</div>
+<button class="bg-primary-container text-on-primary px-8 py-4 font-label-caps hover:opacity-90 transition-all flex items-center gap-3">
+                        Download Portfolio
+                        <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+<!-- Process Layout (Asymmetric 4-column-ish grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter border-t border-stone-200 pt-16">
+<!-- Step 1 -->
+<div class="space-y-stack-md group">
+<span class="font-display-xl text-6xl text-stone-200 group-hover:text-primary transition-colors duration-500">01</span>
+<h4 class="font-headline-md text-xl uppercase tracking-wider">Design Brief</h4>
+<p class="font-body-md text-on-surface-variant">Our journey begins with a detailed requirement meeting. We dive deep into your company culture, workflow needs, and brand aspirations.</p>
+<a class="inline-flex items-center gap-2 font-label-caps text-primary hover:gap-4 transition-all" href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+<!-- Step 2 -->
+<div class="space-y-stack-md group lg:mt-12">
+<span class="font-display-xl text-6xl text-stone-200 group-hover:text-primary transition-colors duration-500">02</span>
+<h4 class="font-headline-md text-xl uppercase tracking-wider">Estimation</h4>
+<p class="font-body-md text-on-surface-variant">Next, we present you with our curated ideas and an approximate estimate that balances luxury with fiscal responsibility.</p>
+<a class="inline-flex items-center gap-2 font-label-caps text-primary hover:gap-4 transition-all" href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+<!-- Step 3 -->
+<div class="space-y-stack-md group">
+<span class="font-display-xl text-6xl text-stone-200 group-hover:text-primary transition-colors duration-500">03</span>
+<h4 class="font-headline-md text-xl uppercase tracking-wider">Build</h4>
+<p class="font-body-md text-on-surface-variant">Once the designs are finalized and approved by you, we move on to the execution phase with our elite team of craftsmen and contractors.</p>
+<a class="inline-flex items-center gap-2 font-label-caps text-primary hover:gap-4 transition-all" href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+<!-- Step 4 -->
+<div class="space-y-stack-md group lg:mt-12">
+<span class="font-display-xl text-6xl text-stone-200 group-hover:text-primary transition-colors duration-500">04</span>
+<h4 class="font-headline-md text-xl uppercase tracking-wider">Handover</h4>
+<p class="font-body-md text-on-surface-variant">As we near completion, we celebrate this milestone with a housewarming party, ensuring every detail exceeds your highest expectations.</p>
+<a class="inline-flex items-center gap-2 font-label-caps text-primary hover:gap-4 transition-all" href="#">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- Section 4: Gallery/Showcase -->
+<section class="py-section-gap px-margin-edge max-w-container-max mx-auto">
+<div class="mb-stack-lg text-center">
+<span class="font-label-caps text-primary">PORTFOLIO SHOWCASE</span>
+<h2 class="font-headline-lg text-headline-lg">Iconic Workspaces</h2>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px]">
+<div class="md:col-span-8 overflow-hidden reveal-on-hover relative group">
+<img alt="Office View" class="w-full h-full object-cover" data-alt="A panoramic view of a luxurious executive office designed with minimalist architectural principles. Features include a floating oak desk, ergonomic leather seating, and integrated smart lighting. The space is defined by its clean lines and a vast glass wall looking out over an urban garden. The lighting is crisp and natural, with a sophisticated warm orange tint reflecting off metallic accents." src="https://lh3.googleusercontent.com/aida/ADBb0ujU_aczX7RnXEicz3YdBqUd8KeM_aBKpV5RX_1DUw4JmWsKsP4dtosm-f3ME1MyV7i-OqzNEH8tr8ARU2wKUuvepQcdM9SZF7yNx7rYBZ_K9vra1KN0Ie71V8CXu9RidS0jh6kkPUJ25p2I_YPq86Y_5FOOJFuShOvfsgpBEhjzAxQqsO1eMJHxEtOjon-tzQR6iYPzpTdRl2AbHFEif9qG3ESiPTh6QNvEqAIlXQiLVCPbfg0b1LMWNaqMKvV0vBK9DjPhQIq3"/>
+<div class="absolute bottom-0 left-0 p-8 text-white caption z-10">
+<p class="font-label-caps text-xs mb-2">CORPORATE HEADQUARTERS</p>
+<h3 class="font-headline-md">The Zenith Suite</h3>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="md:col-span-4 overflow-hidden reveal-on-hover relative group">
+<img alt="Office Detail" class="w-full h-full object-cover" data-alt="A close-up vertical shot of an architectural office lounge area. It features a pair of designer accent chairs in a muted burnt orange fabric, situated next to a minimalist marble coffee table. The wall behind is textured plaster with integrated warm LED strips. The styling is impeccable, evoking a sense of calm, professional luxury and modern editorial design." src="https://lh3.googleusercontent.com/aida/ADBb0uheyOYBo_OCxnb-OGeWnBYQy9xfmqQW8h0oC-TTzn5FVDpFOpLrY0vuIDBtpKshJvVKYLmLycdqyNqgwL4puWY4G14K0o0ZKMJ72EOD3XN6F3CKi_LOVZ-dS4zjo0Bt4ii7QAoiS-c4KKN3U7kGfx4sEBKxEpgDCE2NCmQvnAjszpcIlhBhYWWr9CPi5YrwgbV_bRxE3IIJez_wNEjjZyLKsufB7hRtpwg94WJgGcSNr07wG1hJqenuq3-n1dORDxJq814hp9ay0Q"/>
+<div class="absolute bottom-0 left-0 p-8 text-white caption z-10">
+<p class="font-label-caps text-xs mb-2">COLLABORATIVE SPACE</p>
+<h3 class="font-headline-md">Innovation Hub</h3>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="md:col-span-4 overflow-hidden reveal-on-hover relative group">
+<img alt="Meeting Room" class="w-full h-full object-cover" data-alt="An elegant conference room with a long solid wood table and high-back designer chairs. The room is enclosed by acoustic glass partitions with thin black frames. Minimalist art hangs on the far wall under soft spotlights. The color palette is composed of beige, slate, and vibrant orange accents in the upholstery, creating a prestigious and high-performance atmosphere." src="https://lh3.googleusercontent.com/aida/ADBb0uj5oikCxV_O1r-OzfNWcR8tJbnR60eG2NOOasjNsjdCr8BhHIg5M2zKcMPbhdBqoQI0s4lGhNN-yL6QP0iu57-Sn3txhy8h5n4YC91ndfN73zaRBWuLwUOSW8BV7CjjNnUPCPqpItMMaxSPZyGmJU-YsQAsAb763nUkMlNkwANocqx0UaDV-yvRDs7_M_qfuBVhEeXyKXx76nV3koPLZ9Hlr14l5x8nHjpme8qgHGp0QCj3OumvE68aqg1CpZ0l2N2cPVkv_Hh4"/>
+<div class="absolute bottom-0 left-0 p-8 text-white caption z-10">
+<p class="font-label-caps text-xs mb-2">EXECUTIVE BOARDROOM</p>
+<h3 class="font-headline-md">Nexus Council</h3>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="md:col-span-8 overflow-hidden reveal-on-hover relative group">
+<img alt="Lobby" class="w-full h-full object-cover" data-alt="A spacious and welcoming modern office reception area. It features a monolithic stone reception desk, expansive white walls, and a curated selection of architectural plants. Large-scale windows illuminate the space, highlighting the interplay between the clean white surfaces and the warm wooden ceiling slats. The mood is welcoming, professional, and reflects a high-end boutique brand identity." src="https://lh3.googleusercontent.com/aida/ADBb0uixFi4dC8rA1P4NXgFlgCLwil_dt3EMuDevrd-6J73CA_HWGF3TcgndC-DqikUGoNNYk6tJ0g9WEFJbrYEZgAtUZlFrFUEoAG3yQ1CPnEGGv6bSYB-0qS9vmGLhG8jMS71ZYBGsBB6BxCnYc96GSzNpCqo7Vmc1625hHWLbiSclo4QjLdcoKPiykSTn2BPX3oszrlGI-MGzbBP_-RXDw0Sygl7YCdOTFDaZyf2-_lkcRxPpjzLR1B5Dfzs291JQARdmTpAllhMkOg"/>
+<div class="absolute bottom-0 left-0 p-8 text-white caption z-10">
+<p class="font-label-caps text-xs mb-2">RECEPTION ARCHITECTURE</p>
+<h3 class="font-headline-md">Aura Lobby</h3>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Contact Teaser -->
+<section class="bg-primary text-on-primary py-24 px-margin-edge overflow-hidden">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h2 class="font-display-xl text-5xl mb-6">Let's redefine your office experience.</h2>
+<p class="font-body-lg text-white/80">Join our newsletter for exclusive insights into the future of architectural workspace design.</p>
+</div>
+<div class="w-full max-w-md">
+<form class="flex gap-4">
+<input class="flex-1 bg-transparent border-b-2 border-white/30 text-white placeholder:text-white/50 focus:border-white outline-none py-4 font-body-md" placeholder="Your work email" type="email"/>
+<button class="bg-white text-primary px-8 py-4 font-label-caps hover:bg-stone-100 transition-colors">Join</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-16 px-6 md:px-margin-edge border-t border-gray-200">
+    <div class="max-w-container-max mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 items-start">
+            <!-- Branding & Socials -->
+            <div class="space-y-6">
+                <div class="text-xl font-bold text-gray-900 uppercase font-headline-md">
+                    <a href="index.html">interiyourspace</a>
+                </div>
+                <div class="flex gap-6">
+                    <a class="text-gray-400 hover:text-[#F77501] transition-all" href="https://www.instagram.com/interiyour_space?igsh=MWRveGs0a242ejE2aQ==&utm_source=ig_contact_invite" target="_blank"><span class="material-symbols-outlined text-xl">camera</span></a>
+                    <a class="text-gray-400 hover:text-[#F77501] transition-all" href="https://wa.me/919834757467" target="_blank"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg></a>
+                    <a class="text-gray-400 hover:text-[#F77501] transition-all" href="mailto:interiyourspace@gmail.com"><span class="material-symbols-outlined text-xl">alternate_email</span></a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="space-y-4">
+                <h5 class="font-label-caps text-xs text-gray-900 uppercase">Contact</h5>
+                <div class="space-y-2 text-sm text-gray-600">
+                    <p>SANIKA - 9834757467</p>
+                    <p>PRIYAM - 94796 58996</p>
+                    <a href="mailto:interiyourspace@gmail.com" class="hover:text-primary transition-colors">interiyourspace@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="space-y-4">
+                <h5 class="font-label-caps text-xs text-gray-900 uppercase">Location</h5>
+                <p class="text-sm text-gray-600">Pune City</p>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-200/50 flex justify-center items-center">
+            <div class="font-epilogue text-[10px] uppercase tracking-widest text-gray-400">
+                © 2024 INTERIYOURSPACE. CRAFTING MODERN LUXURY.
+            </div>
+        </div>
+    </div>
+</footer>
+    <script>
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close menu on link click
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body></html>
